@@ -4,7 +4,7 @@ export default function About() {
       <h1 className="text-3xl font-bold mb-4">About Me</h1>
       <p>
         I&apos;m Daniel Buckner, a Senior Full Stack Developer with experience
-        in .NET, React, Docker, and DevOps...
+        in .NET, React, Docker, and DevOps.....
       </p>
     </main>
   );
