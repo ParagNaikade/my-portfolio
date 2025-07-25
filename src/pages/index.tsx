@@ -20,7 +20,9 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl font-bold mb-2">Hi, I'm Daniel Buckner 👋</h1>
+        <h1 className="text-4xl font-bold mb-2">
+          Hi, I&apos;m Daniel Buckner 👋
+        </h1>
         <p className="text-lg text-gray-600">
           Senior Full Stack Developer | .NET • React • Azure • DevOps
         </p>
