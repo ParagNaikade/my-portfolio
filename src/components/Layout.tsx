@@ -13,7 +13,7 @@ export default function Layout({
       <Head>
         <title>{title}</title>
       </Head>
-      <main className="min-h-screen bg-gray-50 text-gray-800 p-6">
+      <main className="min-h-screen bg-gray-50 text-gray-800 p-6 pt-20">
         <NavBar />
         {children}
       </main>

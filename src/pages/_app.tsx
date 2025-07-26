@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   return (
-    <Layout title="Daniel Buckner | Full Stack Developer">
+    <Layout title="Parag Naikade | Lead Full Stack Developer">
       <AnimatePresence mode="wait">
         <motion.div
           key={router.pathname}
