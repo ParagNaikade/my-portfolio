@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import { Server, Database, Rocket, Boxes, Wrench, ScrollText, TrendingUp } from "lucide-react";
-import { Accordion } from '@/components/Accordion';
+import { Accordion } from "@/components/Accordion";
 
 function TechnicalExpertise() {
   return (
@@ -12,7 +12,7 @@ function TechnicalExpertise() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.2 }}
-       className="mb-12 bg-gradient-to-b from-white via-slate-50 to-slate-100 py-10 px-4 md:px-8 rounded-xl shadow-md"
+      className="mb-12 bg-gradient-to-b from-white via-slate-50 to-slate-100 py-10 px-4 md:px-8 rounded-xl shadow-md"
     >
       <h2 className="text-2xl font-semibold mb-6 text-gray-900">Technical Expertise</h2>
 
@@ -77,11 +77,19 @@ export default function AboutPage() {
         transition={{ duration: 0.4, delay: 0.1 }}
       >
         <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-          I’m a <strong>Tech Lead and Full Stack Developer</strong> with over <strong>12 years of experience</strong> building enterprise-grade applications across a wide range of industries and technologies. I specialize in designing scalable systems, leading cross-functional teams, and delivering high-quality software in both onshore and offshore setups.
+          I&nbrsp;m a <strong>Tech Lead and Full Stack Developer</strong> with over{" "}
+          <strong>12 years of experience</strong> building enterprise-grade applications across a
+          wide range of industries and technologies. I specialize in designing scalable systems,
+          leading cross-functional teams, and delivering high-quality software in both onshore and
+          offshore setups.
         </p>
 
         <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-          Throughout my career, I’ve gained a reputation for being highly adaptable and solution-driven — quickly picking up new stacks, mentoring engineers, and helping teams succeed under tight timelines. Whether it’s modern front-end frameworks or legacy platforms, I enjoy solving real-world problems and turning ideas into well-engineered products.
+          Throughout my career, I&nbrsp;ve gained a reputation for being highly adaptable and
+          solution-driven — quickly picking up new stacks, mentoring engineers, and helping teams
+          succeed under tight timelines. Whether it’s modern front-end frameworks or legacy
+          platforms, I enjoy solving real-world problems and turning ideas into well-engineered
+          products.
         </p>
       </motion.section>
 
@@ -97,7 +105,9 @@ export default function AboutPage() {
       >
         <h2 className="text-2xl font-semibold mb-4">Leadership Philosophy</h2>
         <p className="text-lg text-gray-700 leading-relaxed">
-          As a technical leader, I believe great software is built by <strong>great teams</strong>. I focus on fostering a culture of ownership, learning, and continuous improvement — encouraging engineers to write clean code, ask good questions, and never stop growing.
+          As a technical leader, I believe great software is built by <strong>great teams</strong>.
+          I focus on fostering a culture of ownership, learning, and continuous improvement —
+          encouraging engineers to write clean code, ask good questions, and never stop growing.
         </p>
       </motion.section>
 
@@ -110,7 +120,8 @@ export default function AboutPage() {
       >
         <h2 className="text-2xl font-semibold mb-4">Let’s Connect</h2>
         <p className="text-lg text-gray-700 leading-relaxed mb-6">
-          I&apos;m currently exploring new opportunities where I can contribute as a senior engineer or tech lead. If you&apos;re hiring or want to collaborate, feel free to reach out.
+          I&apos;m currently exploring new opportunities where I can contribute as a senior engineer
+          or tech lead. If you&apos;re hiring or want to collaborate, feel free to reach out.
         </p>
         <Link
           href="/contact"
