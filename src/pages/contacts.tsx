@@ -10,11 +10,7 @@ export default function Contact() {
       </p>
       <p>
         LinkedIn:{" "}
-        <a
-          href="https://linkedin.com/in/yourprofile"
-          className="text-blue-600"
-          target="_blank"
-        >
+        <a href="https://linkedin.com/in/yourprofile" className="text-blue-600" target="_blank">
           yourprofile
         </a>
       </p>

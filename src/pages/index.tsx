@@ -7,10 +7,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Daniel Buckner | Full Stack Developer</title>
+        <title>Parag Naikade | Lead Full Stack Developer</title>
         <meta
           name="description"
-          content="Portfolio of Daniel Buckner - .NET, React, DevOps Engineer"
+          content="Portfolio of Parag Naikade - .NET, React, DevOps Engineer"
         />
       </Head>
 
@@ -20,9 +20,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl font-bold mb-2">
-          Hi, I&apos;m Daniel Buckner 👋
-        </h1>
+        <h1 className="text-4xl font-bold mb-2">Hi, I&apos;m Parag Naikade 👋</h1>
         <p className="text-lg text-gray-600">
           Senior Full Stack Developer | .NET • React • Azure • DevOps
         </p>
@@ -48,10 +46,7 @@ export default function Home() {
                 <p className="mb-2 text-gray-600">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-sm bg-gray-100 px-2 py-1 rounded"
-                    >
+                    <span key={tech} className="text-sm bg-gray-100 px-2 py-1 rounded">
                       {tech}
                     </span>
                   ))}
@@ -103,7 +98,7 @@ export default function Home() {
           LinkedIn:{" "}
           <a
             className="text-blue-600"
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/parag-naikade/"
             target="_blank"
           >
             yourprofile

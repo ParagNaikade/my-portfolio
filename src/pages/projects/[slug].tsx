@@ -34,9 +34,7 @@ export default function ProjectPage({ project }: Props) {
         </ul>
       </div>
       <div className="prose prose-lg max-w-none">
-        <div
-          dangerouslySetInnerHTML={{ __html: convertMarkdown(project.content) }}
-        />
+        <div dangerouslySetInnerHTML={{ __html: convertMarkdown(project.content) }} />
       </div>
     </div>
   );
