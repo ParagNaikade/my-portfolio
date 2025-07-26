@@ -77,11 +77,9 @@ export default function Home() {
           download
           className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
           onClick={() =>
-            logEvent({
-              action: "download_resume",
-              category: "downloads",
-              label: "Resume PDF",
-            })
+            setTimeout(() => {
+              logEvent({ action: "download_resume", category: "downloads", label: "Resume PDF" });
+            }, 500)
           }
         >
           Download Resume

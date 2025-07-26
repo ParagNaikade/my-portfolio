@@ -12,7 +12,11 @@ export const logEvent = ({
   label: string;
   value?: number;
 }) => {
-  if (!window.gtag) return;
+  if (typeof window === "undefined" || typeof window.gtag !== "function" || !GA_TRACKING_ID) {
+    console.warn("GA not initialized or GA_TRACKING_ID is missing.");
+    return;
+  }
+
   window.gtag("event", action, {
     event_category: category,
     event_label: label,
