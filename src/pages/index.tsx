@@ -7,10 +7,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Parag Naikade | Lead Full Stack Developer</title>
+        <title>Daniel Buckner | Full Stack Developer</title>
         <meta
           name="description"
-          content="Portfolio of Parag Naikade - .NET, React, DevOps Engineer"
+          content="Portfolio of Daniel Buckner - .NET, React, DevOps Engineer"
         />
       </Head>
 
@@ -21,10 +21,10 @@ export default function Home() {
         transition={{ duration: 0.6 }}
       >
         <h1 className="text-4xl font-bold mb-2">
-          Hi, I&apos;m Parag Naikade 👋
+          Hi, I&apos;m Daniel Buckner 👋
         </h1>
         <p className="text-lg text-gray-600">
-          Lead Full Stack Developer | .NET • React • Azure • DevOps
+          Senior Full Stack Developer | .NET • React • Azure • DevOps
         </p>
       </motion.header>
 
@@ -118,36 +118,3 @@ const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 };
-
-
-  title,
-  description,
-  github,
-  demo,
-}: {
-  title: string;
-  description: string;
-  github: string;
-  demo: string;
-}) {
-  return (
-    <motion.div
-      className="p-4 border rounded-xl shadow hover:shadow-lg transition hover:scale-105 bg-white"
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.98 }}
-    >
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="mb-3 text-gray-600">{description}</p>
-      <div className="flex space-x-4">
-        <a href={github} target="_blank" className="text-blue-600">
-          GitHub
-        </a>
-        {demo !== "#" && (
-          <a href={demo} target="_blank" className="text-blue-600">
-            Live Demo
-          </a>
-        )}
-      </div>
-    </motion.div>
-  );
-}
