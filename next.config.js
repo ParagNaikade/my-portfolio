@@ -1,9 +1,8 @@
-
 const nextConfig = {
-  output: "export", // required for static export
+  output: 'export',
   images: {
-    unoptimized: true, // Cloudflare Pages doesn’t optimize images by default
+    unoptimized: true,
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
