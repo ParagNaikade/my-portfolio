@@ -119,7 +119,7 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0 },
 };
 
-function ProjectCard({
+
   title,
   description,
   github,

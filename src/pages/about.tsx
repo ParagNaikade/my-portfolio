@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Server, LayoutDashboard, Database, Rocket, Boxes, Wrench, ScrollText, TrendingUp } from "lucide-react";
+import { Server, Database, Rocket, Boxes, Wrench, ScrollText, TrendingUp } from "lucide-react";
 import { Accordion } from '@/components/Accordion';
 
 function TechnicalExpertise() {
@@ -12,7 +12,7 @@ function TechnicalExpertise() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.2 }}
-      className="mb-12"
+       className="mb-12 bg-gradient-to-b from-white via-slate-50 to-slate-100 py-10 px-4 md:px-8 rounded-xl shadow-md"
     >
       <h2 className="text-2xl font-semibold mb-6 text-gray-900">Technical Expertise</h2>
 
@@ -110,7 +110,7 @@ export default function AboutPage() {
       >
         <h2 className="text-2xl font-semibold mb-4">Let’s Connect</h2>
         <p className="text-lg text-gray-700 leading-relaxed mb-6">
-          I'm currently exploring new opportunities where I can contribute as a senior engineer or tech lead. If you're hiring or want to collaborate, feel free to reach out.
+          I&apos;m currently exploring new opportunities where I can contribute as a senior engineer or tech lead. If you&apos;re hiring or want to collaborate, feel free to reach out.
         </p>
         <Link
           href="/contact"
