@@ -77,7 +77,7 @@ export default function AboutPage() {
         transition={{ duration: 0.4, delay: 0.1 }}
       >
         <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-          I&nbrsp;m a <strong>Tech Lead and Full Stack Developer</strong> with over{" "}
+          I&apos;m a <strong>Tech Lead and Full Stack Developer</strong> with over{" "}
           <strong>12 years of experience</strong> building enterprise-grade applications across a
           wide range of industries and technologies. I specialize in designing scalable systems,
           leading cross-functional teams, and delivering high-quality software in both onshore and
@@ -85,7 +85,7 @@ export default function AboutPage() {
         </p>
 
         <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-          Throughout my career, I&nbrsp;ve gained a reputation for being highly adaptable and
+          Throughout my career, I&apos;ve gained a reputation for being highly adaptable and
           solution-driven — quickly picking up new stacks, mentoring engineers, and helping teams
           succeed under tight timelines. Whether it’s modern front-end frameworks or legacy
           platforms, I enjoy solving real-world problems and turning ideas into well-engineered
