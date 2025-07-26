@@ -52,7 +52,12 @@ export default function NavBar() {
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-        <div className="text-xl font-bold text-gray-900 dark:text-white">Parag Naikade</div>
+        <Link
+          href="/"
+          className="text-xl font-bold text-gray-900 dark:text-white hover:scale-120 transition-transform duration-200"
+        >
+          Parag Naikade
+        </Link>
 
         {/* Desktop Links */}
         <ul className="hidden md:flex space-x-6 text-blue-600 font-medium">
