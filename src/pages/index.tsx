@@ -2,6 +2,7 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import { logEvent } from "@/lib/gtag";
 
 export default function Home() {
   return (
@@ -75,6 +76,13 @@ export default function Home() {
           href="/Daniel_Buckner_Resume.pdf"
           download
           className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+          onClick={() =>
+            logEvent({
+              action: "download_resume",
+              category: "downloads",
+              label: "Resume PDF",
+            })
+          }
         >
           Download Resume
         </a>
@@ -91,7 +99,7 @@ export default function Home() {
         <p>
           Email:{" "}
           <a className="text-blue-600" href="mailto:daniel@example.com">
-            daniel@example.com
+            paragnaikade@gmail.com
           </a>
         </p>
         <p>
@@ -101,7 +109,7 @@ export default function Home() {
             href="https://www.linkedin.com/in/parag-naikade/"
             target="_blank"
           >
-            yourprofile
+            My Profile
           </a>
         </p>
       </motion.section>
