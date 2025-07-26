@@ -7,10 +7,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Daniel Buckner | Full Stack Developer</title>
+        <title>Parag Naikade | Lead Full Stack Developer</title>
         <meta
           name="description"
-          content="Portfolio of Daniel Buckner - .NET, React, DevOps Engineer"
+          content="Portfolio of Parag Naikade - .NET, React, DevOps Engineer"
         />
       </Head>
 
@@ -21,10 +21,10 @@ export default function Home() {
         transition={{ duration: 0.6 }}
       >
         <h1 className="text-4xl font-bold mb-2">
-          Hi, I&apos;m Daniel Buckner 👋
+          Hi, I&apos;m Parag Naikade 👋
         </h1>
         <p className="text-lg text-gray-600">
-          Senior Full Stack Developer | .NET • React • Azure • DevOps
+          Lead Full Stack Developer | .NET • React • Azure • DevOps
         </p>
       </motion.header>
 
