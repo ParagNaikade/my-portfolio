@@ -1,0 +1,115 @@
+// app/contact/page.tsx or components/ContactForm.tsx
+"use client";
+
+import dynamic from "next/dynamic";
+import { useState } from "react";
+
+const Recaptcha = dynamic(() => import("@/components/Recaptcha"), { ssr: false });
+
+export default function ContactForm() {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [token, setToken] = useState<string | null>(null);
+  const [status, setStatus] = useState<"idle" | "success" | "error" | "submitting">("idle");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!token) {
+      alert("Please verify reCAPTCHA.");
+      return;
+    }
+
+    setStatus("submitting");
+
+    try {
+      const response = await fetch(process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT!, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          "g-recaptcha-response": token,
+        }),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  return (
+    <section className="max-w-xl mx-auto px-4 py-12">
+      <h1 className="text-3xl font-bold mb-4 text-gray-900">Get in Touch</h1>
+      <p className="text-gray-700 mb-8">
+        Whether youre reaching out for a collaboration, opportunity, or a quick chat — I&apos;d love
+        to hear from you.
+      </p>
+
+      {status === "success" && (
+        <p className="mb-6 text-green-600 font-medium">Thank you! Your message has been sent.</p>
+      )}
+      {status === "error" && (
+        <p className="mb-6 text-red-600 font-medium">
+          Oops! Something went wrong. Try again later.
+        </p>
+      )}
+
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div>
+          <label className="block text-sm font-medium text-gray-800">Name</label>
+          <input
+            name="name"
+            type="text"
+            required
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full mt-1 p-2 border rounded-md"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-800">Email</label>
+          <input
+            name="email"
+            type="email"
+            required
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full mt-1 p-2 border rounded-md"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-800">Message</label>
+          <textarea
+            name="message"
+            rows={5}
+            required
+            value={formData.message}
+            onChange={handleChange}
+            className="w-full mt-1 p-2 border rounded-md"
+          />
+        </div>
+
+        <Recaptcha onChange={(t) => setToken(t)} />
+
+        <button
+          type="submit"
+          disabled={status === "submitting"}
+          className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition disabled:opacity-50"
+        >
+          {status === "submitting" ? "Sending..." : "Send Message"}
+        </button>
+      </form>
+    </section>
+  );
+}
