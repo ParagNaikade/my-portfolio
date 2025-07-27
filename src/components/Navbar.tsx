@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import { ThemeToggleIcon } from "./ThemeToggleIcon";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -63,6 +64,8 @@ export default function NavBar() {
         <ul className="hidden md:flex space-x-6 text-blue-600 font-medium">
           <NavLinks onClick={() => setMenuOpen(false)} />
         </ul>
+
+        <ThemeToggleIcon />
 
         {/* Mobile Menu Button */}
         <button
