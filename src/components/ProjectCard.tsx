@@ -1,17 +1,9 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { IProject } from "@/data/projects";
 
 interface ProjectCardProps {
-  project: {
-    slug: string;
-    title: string;
-    description: string;
-    tech: string[];
-    gradient: {
-      light: string;
-      dark: string;
-    };
-  };
+  project: IProject;
   index: number;
 }
 
@@ -32,16 +24,16 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </h2>
 
           <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-            {project.description}
+            {project.shortDescription}
           </p>
 
           <div className="flex flex-wrap gap-2 mt-4">
             {project.tech.map((tech) => (
               <span
-                key={tech}
+                key={tech.name}
                 className="inline-block bg-blue-50 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs font-medium px-2 py-1 rounded-full"
               >
-                {tech}
+                {tech.icon} {tech.name}
               </span>
             ))}
           </div>

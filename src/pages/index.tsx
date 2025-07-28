@@ -24,7 +24,7 @@ export default function Home() {
       >
         <h1 className="text-4xl font-bold mb-2">Hi, I&apos;m Parag Naikade 👋</h1>
         <p className="text-lg text-gray-600">
-          Senior Full Stack Developer | .NET • React • Azure • DevOps
+          Lead Full Stack Developer | .NET • Blazor • React • Azure • DevOps
         </p>
       </motion.header>
 
@@ -58,7 +58,7 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-4">Resume</h2>
         <p className="mb-2 text-gray-600">You can download my resume below:</p>
         <a
-          href="/Daniel_Buckner_Resume.pdf"
+          href="/Parag Naikade 2025.pdf"
           download
           className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
           onClick={() =>
