@@ -1,10 +1,10 @@
 // pages/projects/[slug].tsx
 import { GetStaticPaths, GetStaticProps } from "next";
-import { projects, Project } from "../../data/projects";
+import { projects, IProject } from "../../data/projects";
 import { useRouter } from "next/router";
 
 interface Props {
-  project: Project;
+  project: IProject;
 }
 
 export default function ProjectPage({ project }: Props) {

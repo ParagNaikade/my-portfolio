@@ -1,5 +1,4 @@
-// data/projects.ts
-export interface Project {
+export interface IProject {
   slug: string;
   title: string;
   description: string;
@@ -7,40 +6,43 @@ export interface Project {
   demo?: string;
   tech: string[];
   content: string; // You can format this later as markdown/HTML
+  gradient: {
+    light: string;
+    dark: string;
+  };
 }
 
-export const projects: Project[] = [
+export const projects: IProject[] = [
   {
     slug: "order-tracking-app",
     title: "Order Tracking App",
-    description: "Blazor Server, RabbitMQ, MongoDB, Docker, CI/CD",
-    github: "https://github.com/yourusername/order-tracking-app",
+    description: `A real-time order tracking system for both customers and admins.
+Includes live messaging, status updates, and dashboard views.
+Built with scalable architecture and asynchronous communication.
+Ideal for logistics, e-commerce, and delivery platforms.`,
+    github: "https://github.com/ParagNaikade/OrderTrackingApp",
     demo: "#",
-    tech: ["Blazor", "RabbitMQ", "Docker", "MongoDB"],
-    content: `
-      This app allows customers to track their orders in real-time...
-      
-      **Tech Stack**:
-      - Backend: Blazor Server (.NET 8)
-      - Messaging: RabbitMQ
-      - Database: MongoDB, SQL Server
-      - CI/CD: GitHub Actions
-    `,
+    tech: ["⚙️ Blazor", "📦 RabbitMQ", "🍃 MongoDB"],
+    content: `...`,
+    gradient: {
+      light: "from-blue-50 via-gray-50 to-indigo-100",
+      dark: "dark:from-slate-800 dark:via-neutral-800 dark:to-indigo-900",
+    },
   },
   {
-    slug: "secure-payment-form",
-    title: "Secure Payment Form",
-    description: "React + eWAY integration with secure fields",
-    github: "https://github.com/yourusername/payment-app",
+    slug: "my-portfolio",
+    title: "My Portfolio",
+    description: `A personal portfolio showcasing my projects and skills.
+Built with modern web technologies and responsive design.
+Features live demos, GitHub links, and tech stack highlights.
+Designed for scalability, accessibility, and dark mode support.`,
+    github: "https://github.com/ParagNaikade/my-portfolio",
     demo: "#",
-    tech: ["React", "eWAY", "Security"],
-    content: `
-      A secure and PCI-compliant payment page integrated with eWAY Secure Fields...
-      
-      **Key Features**:
-      - React SPA
-      - Hosted fields for card input
-      - Token-based communication with server
-    `,
+    tech: ["⚛️ React", "🌐 Next.js", "🎨 Tailwind CSS"],
+    content: `...`,
+    gradient: {
+      light: "from-blue-50 via-gray-50 to-indigo-100",
+      dark: "dark:from-slate-800 dark:via-neutral-800 dark:to-indigo-900",
+    },
   },
 ];

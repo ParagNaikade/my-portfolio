@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { projects } from "@/data/projects";
 import { logEvent } from "@/lib/gtag";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
   return (
@@ -35,25 +36,9 @@ export default function Home() {
         transition={{ delay: 0.2 }}
       >
         <h2 className="text-2xl font-semibold mb-4">Featured Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.slice(0, 2).map((project) => (
-            <Link key={project.slug} href={`/projects/${project.slug}`}>
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-                className="p-5 border rounded-xl shadow hover:shadow-lg transition bg-white"
-              >
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="mb-2 text-gray-600">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span key={tech} className="text-sm bg-gray-100 px-2 py-1 rounded">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            </Link>
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {projects.slice(0, 2).map((project, index) => (
+            <ProjectCard key={project.slug} project={project} index={index} />
           ))}
         </div>
         <div className="mt-6">
