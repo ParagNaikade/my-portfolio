@@ -116,12 +116,13 @@ export default function ProjectPage({ project }: Props) {
           <h2 className="text-2xl font-semibold mb-2">Screenshots</h2>
           <div className="flex flex-wrap gap-4">
             {project.screenshots.map((src, i) => (
-              <img
-                key={i}
-                src={src}
-                alt={`${project.title} screenshot ${i + 1}`}
-                className="rounded-lg shadow-md max-w-full h-auto"
-              />
+              <a key={i} href={src} target="_blank" rel="noopener noreferrer" className="block">
+                <img
+                  src={src}
+                  alt={`${project.title} screenshot ${i + 1}`}
+                  className="rounded-lg shadow-md max-w-full h-auto"
+                />
+              </a>
             ))}
           </div>
         </section>
