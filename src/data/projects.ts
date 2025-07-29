@@ -4,7 +4,6 @@ export interface IProject {
   shortDescription: string;
   fullDescription: string;
   features?: string[];
-  images?: string[];
   tech: { name: string; icon?: string }[];
   github: string;
   demo?: string;
@@ -111,12 +110,6 @@ export const projects: IProject[] = [
       "Initial data seeding via Migration Runner console app",
       "Containerized with Docker and orchestrated using Docker Compose",
     ],
-    images: [
-      // example placeholders, add your actual image URLs or paths
-      "/images/order-management-architecture.png",
-      "/images/docker-compose-setup.png",
-      "/images/api-endpoints.png",
-    ],
     tech: [
       { name: "C#", icon: "💻" },
       { name: ".NET 8", icon: "🌐" },
@@ -128,7 +121,7 @@ export const projects: IProject[] = [
       { name: "CQRS", icon: "🔄" },
       { name: "Clean Architecture", icon: "🏛️" },
     ],
-    github: "https://github.com/yourusername/order-management-clean-architecture",
+    github: "https://github.com/ParagNaikade/OrderTrackingApp",
     demo: "", // add URL if you have a live demo
     gradient: {
       light: "from-blue-50 via-gray-50 to-indigo-100",
