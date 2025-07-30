@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { projects, IProject } from "../../data/projects";
 import { useRouter } from "next/router";
 import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
 
 interface Props {
   project: IProject;
@@ -117,8 +118,10 @@ export default function ProjectPage({ project }: Props) {
           <div className="flex flex-wrap gap-4">
             {project.screenshots.map((src, i) => (
               <a key={i} href={src} target="_blank" rel="noopener noreferrer" className="block">
-                <img
+                <Image
                   src={src}
+                  width={600}
+                  height={400}
                   alt={`${project.title} screenshot ${i + 1}`}
                   className="rounded-lg shadow-md max-w-full h-auto border border-gray-200 dark:border-gray-700"
                 />
