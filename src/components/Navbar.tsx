@@ -99,6 +99,7 @@ function NavLinks({ onClick }: { onClick?: () => void }) {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Projects", href: "/projects" },
+    { name: "Leadership", href: "/leadership" },
     { name: "Contact", href: "/contact" },
   ];
 

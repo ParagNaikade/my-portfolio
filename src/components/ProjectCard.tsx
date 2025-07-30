@@ -19,7 +19,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         className={`group block overflow-hidden border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-lg hover:border-blue-500 transition duration-300 bg-gradient-to-br ${project.gradient.light} ${project.gradient.dark}`}
       >
         <div className="p-6">
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 mb-2">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 mb-2">
             {project.title}
           </h2>
 
