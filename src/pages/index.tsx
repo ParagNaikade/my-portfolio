@@ -26,7 +26,8 @@ export default function Home() {
           Hi, I&apos;m Parag Naikade 👋
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-300">
-          Lead Full Stack Developer | .NET • Blazor • React • Azure • DevOps
+          Engineering Leader • Tech Lead • Full Stack Developer (.NET, React, Azure) • Team Builder
+          & Mentor
         </p>
       </motion.header>
 
