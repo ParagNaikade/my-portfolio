@@ -25,7 +25,7 @@ const elpCaseStudy: ICaseStudy = {
       heading: "🧪 Selection Process",
       content: "",
       listItems: [
-        "Manager Recommendation: Endorsement from Shivani Tiwari",
+        "Manager Recommendation: Endorsement from the manager",
         "Written Submission: A detailed Q&A reflecting on leadership experiences and aspirations",
         "Assessment Round: A formal test evaluating leadership aptitude",
         "Final Interview: Panel interview with senior leaders",
