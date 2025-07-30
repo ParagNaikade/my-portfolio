@@ -12,7 +12,7 @@ export default function ProjectPage({ project }: Props) {
   if (router.isFallback) return <div>Loading...</div>;
 
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-10">
+    <div className="max-w-4xl mx-auto p-6 space-y-10 bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
       {/* Title and Short Description */}
       <header>
         <h1 className="text-4xl font-bold mb-2">{project.title}</h1>
@@ -35,7 +35,7 @@ export default function ProjectPage({ project }: Props) {
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 border border-blue-600 text-blue-600 rounded-md shadow hover:bg-blue-50 transition"
+            className="flex items-center gap-2 px-4 py-2 border border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-300 rounded-md shadow hover:bg-blue-50 dark:hover:bg-blue-950 transition"
           >
             <ExternalLink size={18} />
             <span>Live Demo</span>
@@ -88,7 +88,7 @@ export default function ProjectPage({ project }: Props) {
               {Object.entries(project.architecture).map(([key, value]) => (
                 <div key={key}>
                   <dt className="font-semibold">{key}</dt>
-                  <dd className="mb-4">{value}</dd>
+                  <dd className="mb-4 text-gray-700 dark:text-gray-300">{value}</dd>
                 </div>
               ))}
             </dl>
@@ -120,7 +120,7 @@ export default function ProjectPage({ project }: Props) {
                 <img
                   src={src}
                   alt={`${project.title} screenshot ${i + 1}`}
-                  className="rounded-lg shadow-md max-w-full h-auto"
+                  className="rounded-lg shadow-md max-w-full h-auto border border-gray-200 dark:border-gray-700"
                 />
               </a>
             ))}

@@ -1,4 +1,3 @@
-// app/contact/page.tsx or components/ContactForm.tsx
 "use client";
 
 import dynamic from "next/dynamic";
@@ -47,56 +46,62 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="max-w-xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-4 text-gray-900">Get in Touch</h1>
-      <p className="text-gray-700 mb-8">
-        Whether youre reaching out for a collaboration, opportunity, or a quick chat — I&apos;d love
-        to hear from you.
+    <section className="max-w-xl mx-auto px-4 py-12 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 rounded-lg shadow">
+      <h1 className="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">Get in Touch</h1>
+      <p className="text-gray-700 dark:text-gray-300 mb-8">
+        Whether you're reaching out for a collaboration, opportunity, or a quick chat — I&apos;d
+        love to hear from you.
       </p>
 
       {status === "success" && (
-        <p className="mb-6 text-green-600 font-medium">Thank you! Your message has been sent.</p>
+        <p className="mb-6 text-green-600 dark:text-green-400 font-medium">
+          Thank you! Your message has been sent.
+        </p>
       )}
       {status === "error" && (
-        <p className="mb-6 text-red-600 font-medium">
+        <p className="mb-6 text-red-600 dark:text-red-400 font-medium">
           Oops! Something went wrong. Try again later.
         </p>
       )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label className="block text-sm font-medium text-gray-800">Name</label>
+          <label className="block text-sm font-medium text-gray-800 dark:text-gray-200">Name</label>
           <input
             name="name"
             type="text"
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full mt-1 p-2 border rounded-md"
+            className="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-300"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-800">Email</label>
+          <label className="block text-sm font-medium text-gray-800 dark:text-gray-200">
+            Email
+          </label>
           <input
             name="email"
             type="email"
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full mt-1 p-2 border rounded-md"
+            className="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-300"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-800">Message</label>
+          <label className="block text-sm font-medium text-gray-800 dark:text-gray-200">
+            Message
+          </label>
           <textarea
             name="message"
             rows={5}
             required
             value={formData.message}
             onChange={handleChange}
-            className="w-full mt-1 p-2 border rounded-md"
+            className="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-300"
           />
         </div>
 

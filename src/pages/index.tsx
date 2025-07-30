@@ -22,8 +22,10 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl font-bold mb-2">Hi, I&apos;m Parag Naikade 👋</h1>
-        <p className="text-lg text-gray-600">
+        <h1 className="text-4xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+          Hi, I&apos;m Parag Naikade 👋
+        </h1>
+        <p className="text-lg text-gray-600 dark:text-gray-300">
           Lead Full Stack Developer | .NET • Blazor • React • Azure • DevOps
         </p>
       </motion.header>
@@ -35,14 +37,16 @@ export default function Home() {
         variants={fadeInUp}
         transition={{ delay: 0.2 }}
       >
-        <h2 className="text-2xl font-semibold mb-4">Featured Projects</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+          Featured Projects
+        </h2>
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {projects.slice(0, 2).map((project, index) => (
             <ProjectCard key={project.slug} project={project} index={index} />
           ))}
         </div>
         <div className="mt-6">
-          <Link href="/projects" className="text-blue-600 underline">
+          <Link href="/projects" className="text-blue-600 dark:text-blue-400 underline">
             View all projects →
           </Link>
         </div>
@@ -55,12 +59,12 @@ export default function Home() {
         variants={fadeInUp}
         transition={{ delay: 0.3 }}
       >
-        <h2 className="text-2xl font-semibold mb-4">Resume</h2>
-        <p className="mb-2 text-gray-600">You can download my resume below:</p>
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Resume</h2>
+        <p className="mb-2 text-gray-600 dark:text-gray-300">You can download my resume below:</p>
         <a
           href="/Parag Naikade 2025.pdf"
           download
-          className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+          className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 dark:hover:bg-blue-800 transition"
           onClick={() =>
             setTimeout(() => {
               logEvent({ action: "download_resume", category: "downloads", label: "Resume PDF" });
@@ -78,19 +82,20 @@ export default function Home() {
         variants={fadeInUp}
         transition={{ delay: 0.4 }}
       >
-        <h2 className="text-2xl font-semibold mb-4">Contact</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Contact</h2>
         <p>
           Email:{" "}
-          <a className="text-blue-600" href="mailto:daniel@example.com">
+          <a className="text-blue-600 dark:text-blue-400" href="mailto:paragnaikade@gmail.com">
             paragnaikade@gmail.com
           </a>
         </p>
         <p>
           LinkedIn:{" "}
           <a
-            className="text-blue-600"
+            className="text-blue-600 dark:text-blue-400"
             href="https://www.linkedin.com/in/parag-naikade/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             My Profile
           </a>
