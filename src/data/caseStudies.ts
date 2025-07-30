@@ -110,7 +110,7 @@ export const rtbCaseStudy: ICaseStudy = {
   title: "🧭 Leading Run the Business (RTB) Initiative",
   summary:
     "Led a multi-regional team to stabilize operations, improve delivery processes, and address critical vulnerabilities in early 2025. Mentored a new hire into a key contributor and enhanced cross-regional accountability.",
-  slug: "rtb-initiative-leadership",
+  slug: "rtb",
   sections: [
     {
       heading: "🧩 Overview",

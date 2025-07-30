@@ -13,7 +13,7 @@ export const CaseStudy = ({ title, summary, slug }: ICaseStudy) => (
     <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">{title}</h3>
     <p className="mb-4 text-gray-700 dark:text-gray-300">{summary}</p>
     <a
-      href={`/leadership/${slug}`}
+      href={`${slug}`}
       className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline"
     >
       Read More <ArrowRight className="ml-2" size={16} />
