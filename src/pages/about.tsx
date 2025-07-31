@@ -105,7 +105,7 @@ export default function AboutPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.3 }}
-        className="mb-10"
+        className="mb-10 text-center"
       >
         <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
           Leadership Philosophy
