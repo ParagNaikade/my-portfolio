@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Parag Naikade Portfolio
 
-## Getting Started
+A sleek, professional portfolio built with React, Next.js, and Tailwind CSS to showcase full-stack development, leadership, and DevOps skills.
 
-First, run the development server:
+## 🚀 Live Demo
+
+[paragnaikade.com](https://paragnaikade.com/)
+
+---
+
+## ✨ Features
+
+- **Modern Tech Stack:** React 19, Next.js 15, Tailwind CSS v4 (zero-config)
+- **Responsive Design:** Mobile-first, fully responsive layout
+- **Dark/Light Theme:** Seamless theme switching with next-themes
+- **Animated UI:** Framer Motion for smooth transitions
+- **Iconography:** Lucide-react icons for a clean, consistent look
+- **Contact Form:** Formspree integration + Google reCAPTCHA for spam protection
+- **Analytics:** Google Analytics integration for traffic insights
+- **CI/CD:** Automated build & deploy with GitHub Actions
+- **Hosting:** Cloudflare Pages with custom domain and HTTPS
+- **Developer Experience:** ESLint, Prettier, and project-wide linting setup
+
+---
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/)
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/ParagNaikade/my-portfolio.git
+cd my-portfolio
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+### Production Build
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+yarn build
+yarn start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📦 Project Structure
 
-## Deploy on Vercel
+- `/src/pages` — Main pages (Home, Projects, Leadership, Contact)
+- `/src/components` — Reusable UI components
+- `/src/data` — Project and case study data
+- `/public` — Static assets (images, PDFs, etc.)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌐 Deployment
+
+- **CI/CD:** Automated via GitHub Actions
+- **Hosting:** [Cloudflare Pages](https://pages.cloudflare.com/) with custom domain ([paragnaikade.com](https://paragnaikade.com))
+- **Analytics:** Google Analytics
+
+---
+
+## 🤝 Contributing
+
+PRs and suggestions are welcome!  
+Please open an issue for bugs or feature requests.
+
+---
+
+## 📄 License
+
+MIT
+
+---
+
+**Made with ❤️ by Parag Naikade**
