@@ -24,67 +24,6 @@ export interface IProject {
 
 export const projects: IProject[] = [
   {
-    slug: "my-portfolio",
-    title: "My Portfolio",
-    shortDescription:
-      "A sleek, professional portfolio showcasing full-stack skills and leadership.",
-    fullDescription: `Built to reflect the capabilities of a Lead Full Stack Developer, this portfolio demonstrates expertise in modern web technologies, CI/CD workflows, and end-to-end deployment.`,
-    features: [
-      "Built with React 19, Next.js 15, and Tailwind CSS v4 (zero-config)",
-      "Fully responsive layout with dark/light theme support using next-themes",
-      "Animated transitions with Framer Motion",
-      "Lucide-react icons for a clean, consistent UI",
-      "Contact form with Formspree integration and Google reCAPTCHA for spam protection",
-      "Google Analytics integration for traffic insights",
-      "CI/CD pipeline using GitHub Actions for build & deploy automation",
-      "Hosted on a custom Cloudflare domain with HTTPS and production performance",
-      "Developer experience enhancements: ESLint, Prettier, and project-wide linting setup",
-    ],
-    github: "https://github.com/ParagNaikade/my-portfolio",
-    demo: "https://paragnaikade.com/",
-    tech: [
-      { name: "React", icon: "⚛️" },
-      { name: "Next.js", icon: "🌐" },
-      { name: "Tailwind CSS", icon: "🎨" },
-      { name: "Framer Motion", icon: "🎞️" },
-      { name: "Lucide React", icon: "🧩" },
-      { name: "Formspree", icon: "📨" },
-      { name: "ReCAPTCHA", icon: "🔒" },
-      { name: "GitHub Actions", icon: "🚀" },
-      { name: "Cloudflare", icon: "☁️" },
-      { name: "Google Analytics", icon: "📊" },
-    ],
-    architecture: {
-      Frontend:
-        "Built entirely with React 19 and Next.js 15, utilizing the App Router for modern routing and React Markdown for rendering rich content.",
-      "Static Site Generation":
-        "Uses Next.js getStaticProps and getStaticPaths to pre-render project pages at build time for fast performance and SEO benefits.",
-      "Theming & UI":
-        "Dark and light mode support implemented with next-themes for seamless theme switching, and icons are provided by lucide-react for a consistent UI experience.",
-    },
-    installation: [
-      "Clone the repo: git clone https://github.com/ParagNaikade/my-portfolio",
-      "Install dependencies: yarn install",
-      "Start the dev server: yarn dev",
-    ],
-    screenshots: ["/demo_1.png", "/demo_2.png"],
-    devops: {
-      ciCd: "Automated CI/CD using GitHub Actions to build and deploy on every commit.",
-      hosting:
-        "Hosted on Cloudflare Pages with a custom domain (paragnaikade.com) and HTTPS enabled.",
-      analytics: "Google Analytics integrated to track traffic and user behavior.",
-    },
-    notes: [
-      "Supports SEO optimizations and smooth page transitions.",
-      "Uses ESLint and Prettier to enforce consistent code style.",
-      "Contact form protected with Google reCAPTCHA v2 to prevent spam.",
-    ],
-    gradient: {
-      light: "from-blue-50 via-gray-50 to-indigo-100",
-      dark: "dark:from-slate-800 dark:via-neutral-800 dark:to-indigo-900",
-    },
-  },
-  {
     slug: "order-tracking-app",
     title: "Order Management System with Clean Architecture",
     shortDescription:
@@ -154,5 +93,126 @@ export const projects: IProject[] = [
       "Separate worker app allows scalable syncing to MongoDB without blocking API.",
       "Docker Compose simplifies local development environment setup.",
     ],
+  },
+  {
+    slug: "blazor-game-lobby",
+    title: "Blazor Game Lobby: Real-Time Rock-Paper-Scissors",
+    shortDescription:
+      "A real-time, multiplayer Rock-Paper-Scissors game built with Blazor WebAssembly and SignalR. Players join rooms, select avatars, and play with live updates.",
+    fullDescription: `
+    BlazorGameLobby is a real-time, multiplayer Rock-Paper-Scissors game built with Blazor WebAssembly and ASP.NET Core SignalR.
+    Players can join a game room, select an avatar, and play against each other with instant updates.
+    The project demonstrates modern .NET 8 features, real-time communication, and a clean separation of client/server/shared code.
+  `,
+    features: [
+      "Blazor WebAssembly frontend for fast, interactive UI",
+      "SignalR for real-time communication between players",
+      "Bootstrap 5 for responsive, modern styling",
+      "Player avatars and names for personalized gameplay",
+      "Room system: create or join rooms by ID",
+      "Game state management: handles moves, results, and player disconnects",
+    ],
+    tech: [
+      { name: "Blazor WebAssembly", icon: "⚡" },
+      { name: ".NET 8", icon: "🌐" },
+      { name: "ASP.NET Core", icon: "🖥️" },
+      { name: "SignalR", icon: "🔗" },
+      { name: "Bootstrap 5", icon: "🎨" },
+      { name: "C#", icon: "💻" },
+    ],
+    github: "https://github.com/ParagNaikade/Blazor-Game-Lobby",
+    demo: "https://blazor-demo.paragnaikade.com/lobby",
+    gradient: {
+      light: "from-yellow-50 via-blue-50 to-green-100",
+      dark: "dark:from-slate-800 dark:via-neutral-800 dark:to-green-900",
+    },
+    architecture: {
+      Client: "Blazor WebAssembly frontend for UI and game interactions",
+      Server: "ASP.NET Core backend with SignalR hub for real-time messaging",
+      Shared: "Shared models and enums for consistent game logic",
+      GameHub: "SignalR hub managing game state and player moves",
+      "Lobby.razor": "Lobby page for joining rooms and selecting avatars",
+      "GameRoom.razor": "Main game room UI for playing rounds",
+    },
+    installation: [
+      "Install .NET 8 SDK",
+      "Restore NuGet packages",
+      "Build the project",
+      "Run the server",
+      "Open https://localhost:5001 in your browser",
+    ],
+    screenshots: ["/rps_1.png", "/rps_2.png", "/rps_3.png", "/rps_4.png"], // Add screenshot paths if available, e.g. ["/blazor_game_lobby_1.png"]
+    devops: {
+      ciCd: "Auto deplpoyment via Render.com with GitHub integration",
+      hosting: "Hosted on Render.com and mapped to a subdomain via Cloudflare DNS.",
+      analytics: "",
+    },
+    notes: [
+      "Avatars can be customized by editing the Avatars array in Lobby.razor.",
+      "UI is styled with Bootstrap 5 for easy customization.",
+      "Game logic is extendable in GameHub.cs and shared models.",
+      "MIT licensed for open source contribution and modification.",
+    ],
+  },
+  {
+    slug: "my-portfolio",
+    title: "My Portfolio",
+    shortDescription:
+      "A sleek, professional portfolio showcasing full-stack skills and leadership.",
+    fullDescription: `Built to reflect the capabilities of a Lead Full Stack Developer, this portfolio demonstrates expertise in modern web technologies, CI/CD workflows, and end-to-end deployment.`,
+    features: [
+      "Built with React 19, Next.js 15, and Tailwind CSS v4 (zero-config)",
+      "Fully responsive layout with dark/light theme support using next-themes",
+      "Animated transitions with Framer Motion",
+      "Lucide-react icons for a clean, consistent UI",
+      "Contact form with Formspree integration and Google reCAPTCHA for spam protection",
+      "Google Analytics integration for traffic insights",
+      "CI/CD pipeline using GitHub Actions for build & deploy automation",
+      "Hosted on a custom Cloudflare domain with HTTPS and production performance",
+      "Developer experience enhancements: ESLint, Prettier, and project-wide linting setup",
+    ],
+    github: "https://github.com/ParagNaikade/my-portfolio",
+    demo: "https://paragnaikade.com/",
+    tech: [
+      { name: "React", icon: "⚛️" },
+      { name: "Next.js", icon: "🌐" },
+      { name: "Tailwind CSS", icon: "🎨" },
+      { name: "Framer Motion", icon: "🎞️" },
+      { name: "Lucide React", icon: "🧩" },
+      { name: "Formspree", icon: "📨" },
+      { name: "ReCAPTCHA", icon: "🔒" },
+      { name: "GitHub Actions", icon: "🚀" },
+      { name: "Cloudflare", icon: "☁️" },
+      { name: "Google Analytics", icon: "📊" },
+    ],
+    architecture: {
+      Frontend:
+        "Built entirely with React 19 and Next.js 15, utilizing the App Router for modern routing and React Markdown for rendering rich content.",
+      "Static Site Generation":
+        "Uses Next.js getStaticProps and getStaticPaths to pre-render project pages at build time for fast performance and SEO benefits.",
+      "Theming & UI":
+        "Dark and light mode support implemented with next-themes for seamless theme switching, and icons are provided by lucide-react for a consistent UI experience.",
+    },
+    installation: [
+      "Clone the repo: git clone https://github.com/ParagNaikade/my-portfolio",
+      "Install dependencies: yarn install",
+      "Start the dev server: yarn dev",
+    ],
+    screenshots: ["/demo_1.png", "/demo_2.png"],
+    devops: {
+      ciCd: "Automated CI/CD using GitHub Actions to build and deploy on every commit.",
+      hosting:
+        "Hosted on Cloudflare Pages with a custom domain (paragnaikade.com) and HTTPS enabled.",
+      analytics: "Google Analytics integrated to track traffic and user behavior.",
+    },
+    notes: [
+      "Supports SEO optimizations and smooth page transitions.",
+      "Uses ESLint and Prettier to enforce consistent code style.",
+      "Contact form protected with Google reCAPTCHA v2 to prevent spam.",
+    ],
+    gradient: {
+      light: "from-blue-50 via-gray-50 to-indigo-100",
+      dark: "dark:from-slate-800 dark:via-neutral-800 dark:to-indigo-900",
+    },
   },
 ];
