@@ -58,7 +58,6 @@ export const projects: IProject[] = [
       { name: "Docker", icon: "🐳" },
       { name: "Docker Compose", icon: "⚙️" },
       { name: "CQRS", icon: "🔄" },
-      { name: "Clean Architecture", icon: "🏛️" },
     ],
     github: "https://github.com/ParagNaikade/OrderTrackingApp",
     demo: "", // add URL if you have a live demo

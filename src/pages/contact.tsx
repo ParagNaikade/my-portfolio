@@ -66,9 +66,15 @@ export default function ContactForm() {
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label className="block text-sm font-medium text-gray-800 dark:text-gray-200">Name</label>
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-800 dark:text-gray-200"
+          >
+            Name
+          </label>
           <input
             name="name"
+            id="name"
             type="text"
             required
             value={formData.name}
@@ -78,10 +84,14 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-800 dark:text-gray-200">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-800 dark:text-gray-200"
+          >
             Email
           </label>
           <input
+            id="email"
             name="email"
             type="email"
             required
@@ -92,10 +102,14 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-800 dark:text-gray-200">
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-gray-800 dark:text-gray-200"
+          >
             Message
           </label>
           <textarea
+            id="message"
             name="message"
             rows={5}
             required

@@ -13,12 +13,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
+      className="flex flex-col h-full"
     >
       <Link
         href={`/projects/${project.slug}`}
-        className={`group block overflow-hidden border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-lg hover:border-blue-500 transition duration-300 bg-gradient-to-br ${project.gradient.light} ${project.gradient.dark}`}
+        className={`group flex flex-col h-full overflow-hidden border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-lg hover:border-blue-500 transition duration-300 bg-gradient-to-br ${project.gradient.light} ${project.gradient.dark}`}
       >
-        <div className="p-6">
+        <div className="flex flex-col flex-1 p-6">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 mb-2">
             {project.title}
           </h2>
@@ -27,7 +28,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             {project.shortDescription}
           </p>
 
-          <div className="flex flex-wrap gap-2 mt-4">
+          <div className="flex flex-wrap gap-2 mt-auto pt-4">
             {project.tech.map((tech) => (
               <span
                 key={tech.name}

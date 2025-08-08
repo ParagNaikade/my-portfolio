@@ -53,7 +53,7 @@ function TechnicalExpertise() {
 
 export default function AboutPage() {
   return (
-    <main className="max-w-3xl mx-auto px-4 py-16 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="max-w-3xl mx-auto px-4 py-16 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900 transition-colors duration-300">
       {/* Profile */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -138,6 +138,6 @@ export default function AboutPage() {
           Contact Me
         </Link>
       </motion.section>
-    </main>
+    </div>
   );
 }

@@ -12,7 +12,7 @@ export default function CaseStudyPage() {
       viewport={{ once: true }}
       className="text-center mb-12"
     >
-      <main className="bg-gradient-to-b from-[#f0f4f8] to-white dark:from-gray-900 dark:to-gray-800 px-4 md:px-12 py-8 transition-colors duration-300">
+      <div className="bg-gradient-to-b from-[#f0f4f8] to-white dark:from-gray-900 dark:to-gray-800 px-4 md:px-12 py-8 transition-colors duration-300">
         <section className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
             My Leadership Journey
@@ -51,7 +51,7 @@ export default function CaseStudyPage() {
             Get in Touch
           </Link>
         </section>
-      </main>
+      </div>
     </motion.section>
   );
 }

@@ -4,6 +4,8 @@ import Link from "next/link";
 import { projects } from "@/data/projects";
 import { logEvent } from "@/lib/gtag";
 import ProjectCard from "@/components/ProjectCard";
+import TestimonialCard from "@/components/TestimonialCard";
+import { testimonials } from "@/data/testimonials";
 
 export default function Home() {
   return (
@@ -49,6 +51,29 @@ export default function Home() {
           <Link href="/projects" className="text-blue-600 dark:text-blue-400 underline">
             View all projects →
           </Link>
+        </div>
+      </motion.section>
+
+      <motion.section
+        className="mb-12"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+        transition={{ delay: 0.5 }}
+      >
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+          Testimonials
+        </h2>
+        <div className="flex flex-col md:flex-row gap-6">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard
+              key={index}
+              author={testimonial.author}
+              quote={testimonial.quote}
+              role={testimonial.role}
+              linkedin={testimonial.linkedin}
+            />
+          ))}
         </div>
       </motion.section>
 

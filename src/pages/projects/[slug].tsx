@@ -21,7 +21,7 @@ export default function ProjectPage({ project }: Props) {
       </header>
 
       {/* GitHub and Demo Links */}
-      <nav className="flex gap-6">
+      <div className="flex gap-6">
         <a
           href={project.github}
           target="_blank"
@@ -42,7 +42,7 @@ export default function ProjectPage({ project }: Props) {
             <span>Live Demo</span>
           </a>
         )}
-      </nav>
+      </div>
 
       {/* Full Description */}
       <section>

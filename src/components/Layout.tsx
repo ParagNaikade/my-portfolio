@@ -10,7 +10,7 @@ export default function Layout({ children, title }: { children: React.ReactNode;
       </Head>
       <main className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 p-6 pt-20 transition-colors duration-300">
         <NavBar />
-        {children}
+        <div className="max-w-[1440px] mx-auto w-full">{children}</div>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       </main>
     </>
