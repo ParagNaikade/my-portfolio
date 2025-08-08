@@ -12,7 +12,7 @@ const TestimonialCard: React.FC<TestimonialProps> = ({ quote, author, role, link
   return (
     <div className="flex flex-col justify-between bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900 border border-gray-200 dark:border-gray-700 shadow-lg p-6 rounded-xl w-full max-w-sm mx-auto md:mx-0 transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
       <p className="text-gray-700 dark:text-gray-200 italic mb-4 transition-colors duration-300">
-        "{quote}"
+        &quot;{quote}&quot;
       </p>
       <div className="flex items-center justify-between mt-4">
         <div>
