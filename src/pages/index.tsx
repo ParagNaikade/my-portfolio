@@ -43,7 +43,7 @@ export default function Home() {
           Featured Projects
         </h2>
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {projects.slice(0, 2).map((project, index) => (
+          {projects.slice(0, 3).map((project, index) => (
             <ProjectCard key={project.slug} project={project} index={index} />
           ))}
         </div>
