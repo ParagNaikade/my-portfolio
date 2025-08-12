@@ -6,13 +6,13 @@ export interface ITestimonial {
 }
 
 export const testimonials: ITestimonial[] = [
-  // {
-  //   quote:
-  //     "Parag consistently delivers high-quality solutions under tight deadlines. His leadership during the RTB initiative was exceptional.",
-  //   author: "Prem Bhawnani",
-  //   role: "Senior Technology Executive | Head of IT",
-  //   linkedin: "https://www.linkedin.com/in/prembhawnani/",
-  // },
+  {
+    quote:
+      "Parag is an exceptionally capable and committed Dev Lead. As the primary SME for several key commercial applications, his technical expertise have consistently delivered excellent and consistent business outcomes over the years.",
+    author: "Prem Bhawnani",
+    role: "Senior Technology Executive | Head of IT",
+    linkedin: "https://www.linkedin.com/in/prembhawnani/",
+  },
   {
     quote:
       "Parag's technical depth and ability to mentor junior developers make him a standout leader in our team.",
