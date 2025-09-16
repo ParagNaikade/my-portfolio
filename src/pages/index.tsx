@@ -6,6 +6,7 @@ import { logEvent } from "@/lib/gtag";
 import ProjectCard from "@/components/ProjectCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import { testimonials } from "@/data/testimonials";
+import Certifications from "@/components/Certifications";
 
 export default function Home() {
   return (
@@ -52,6 +53,19 @@ export default function Home() {
             View all projects →
           </Link>
         </div>
+      </motion.section>
+
+      <motion.section
+        className="mb-12"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+        transition={{ delay: 0.3 }}
+      >
+        <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+          Microsoft Certifications
+        </h2>
+        <Certifications />
       </motion.section>
 
       <motion.section

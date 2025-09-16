@@ -36,7 +36,8 @@ function TechnicalExpertise() {
         </Accordion>
 
         <Accordion title="Certifications" icon={ScrollText}>
-          Microsoft Certified: Azure Developer Associate (AZ-204), Azure Fundamentals (AZ-900)
+          Microsoft Certified: Azure Developer Associate (AZ-204), Azure Fundamentals (AZ-900),
+          Azure AI Fundamentals (AI-900)
         </Accordion>
 
         <Accordion title="Currently Learning" icon={TrendingUp}>
