@@ -124,8 +124,8 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Contact</h2>
         <p>
           Email:{" "}
-          <a className="text-blue-600 dark:text-blue-400" href="mailto:paragnaikade@gmail.com">
-            paragnaikade@gmail.com
+          <a className="text-blue-600 dark:text-blue-400" href="mailto:contact@paragnaikade.com">
+            contact@paragnaikade.com
           </a>
         </p>
         <p>
