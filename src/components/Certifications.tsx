@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function Certifications() {
   return (
-    <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 ">
-      {certifications.map((cert, i) => (
+    <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {[...certifications].reverse().map((cert, i) => (
         <motion.a
           key={cert.id}
           href={cert.link}
