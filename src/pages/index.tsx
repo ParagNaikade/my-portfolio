@@ -101,7 +101,7 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Resume</h2>
         <p className="mb-2 text-gray-600 dark:text-gray-300">You can download my resume below:</p>
         <a
-          href="/Parag Naikade 2025.pdf"
+          href="/Parag_Naikade_Resume.pdf"
           download
           className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 dark:hover:bg-blue-800 transition"
           onClick={() =>
