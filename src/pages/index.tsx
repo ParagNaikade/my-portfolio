@@ -2,11 +2,11 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { projects } from "@/data/projects";
-import { logEvent } from "@/lib/gtag";
 import ProjectCard from "@/components/ProjectCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import { testimonials } from "@/data/testimonials";
 import Certifications from "@/components/Certifications";
+import ResumeButtons from "@/components/ResumeButtons";
 
 export default function Home() {
   return (
@@ -99,19 +99,10 @@ export default function Home() {
         transition={{ delay: 0.3 }}
       >
         <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Resume</h2>
-        <p className="mb-2 text-gray-600 dark:text-gray-300">You can download my resume below:</p>
-        <a
-          href="/Parag_Naikade_Resume.pdf"
-          download
-          className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 dark:hover:bg-blue-800 transition"
-          onClick={() =>
-            setTimeout(() => {
-              logEvent({ action: "download_resume", category: "downloads", label: "Resume PDF" });
-            }, 500)
-          }
-        >
-          Download Resume
-        </a>
+        <p className="mb-2 text-gray-600 dark:text-gray-300">
+          You can view/download my resume below:
+        </p>
+        <ResumeButtons />
       </motion.section>
 
       <motion.section
