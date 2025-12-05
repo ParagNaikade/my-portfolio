@@ -15,8 +15,11 @@ jobs:
         node-version: lts/*
     - name: Enable Corepack
       run: corepack enable
-    - name: Install dependencies
-      run: npm install -g yarn && yarn
+    - name: Prepare Yarn via Corepack and install dependencies
+      run: |
+        # Activate the Yarn version declared in package.json (yarn@4.9.2)
+        corepack prepare yarn@4.9.2 --activate
+        yarn install --immutable
     - name: Install Playwright Browsers
       run: yarn playwright install --with-deps
     - name: Run Playwright tests
