@@ -8,7 +8,7 @@ import { testimonials } from "@/data/testimonials";
 import Certifications from "@/components/Certifications";
 import ResumeButtons from "@/components/ResumeButtons";
 
-export default function Home() {
+export default function Home( {
   return (
     <>
       <Head>
