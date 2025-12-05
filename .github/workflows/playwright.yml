@@ -6,6 +6,8 @@ on:
     branches: [ develop, master ]
 jobs:
   test:
+    env:
+      CI: 'true'
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
