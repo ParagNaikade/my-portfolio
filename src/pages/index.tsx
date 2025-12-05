@@ -12,10 +12,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Parag Naikade | Lead Full Stack Developer</title>
+        <title>Parag Naikade | Lead Full Stack Developer1</title>
         <meta
           name="description"
-          content="Portfolio of Parag Naikade - .NET, React, DevOps Engineer1"
+          content="Portfolio of Parag Naikade - .NET, React, DevOps Engineer"
         />
       </Head>
 
