@@ -8,14 +8,14 @@ import { testimonials } from "@/data/testimonials";
 import Certifications from "@/components/Certifications";
 import ResumeButtons from "@/components/ResumeButtons";
 
-export default function Home( {
+export default function Home() {
   return (
     <>
       <Head>
         <title>Parag Naikade | Lead Full Stack Developer</title>
         <meta
           name="description"
-          content="Portfolio of Parag Naikade - .NET, React, DevOps Engineer"
+          content="Portfolio of Parag Naikade - .NET, React, DevOps Engineer1"
         />
       </Head>
 
