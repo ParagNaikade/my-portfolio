@@ -1,4 +1,10 @@
 export async function onRequestPost({ request }) {
+    const headers = {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "POST,OPTIONS",
+    };
+
     try {
         const body = await request.json();
         const { message } = body;
@@ -8,7 +14,7 @@ export async function onRequestPost({ request }) {
         }
 
         // Call your existing AWS Lambda API
-        const response = await fetch(process.env.AWS_API_URL, {
+        const response = await fetch(ENV.AWS_API_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ message }),
