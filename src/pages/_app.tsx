@@ -5,6 +5,7 @@ import Layout from "@/components/Layout";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { ThemeProvider } from "next-themes";
+import Chatbot from "@/components/Chatbot";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -21,6 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
             transition={{ duration: 0.3 }}
           >
             <Component {...pageProps} />
+            <Chatbot />
           </motion.div>
         </AnimatePresence>
       </Layout>
