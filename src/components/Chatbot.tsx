@@ -79,7 +79,7 @@ export default function Chatbot() {
 
     try {
       // IMPORTANT: send the already-trimmed value (not the cleared state)
-      const res = await fetch("/chat", {
+      const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: trimmed }),
