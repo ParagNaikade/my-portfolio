@@ -19,9 +19,8 @@ jobs:
         run: corepack enable
       - name: Prepare Yarn via Corepack and install dependencies
         run: |
-          # Activate the Yarn version declared in package.json (yarn@4.9.2)
           corepack prepare yarn@4.9.2 --activate
-          yarn install --no-hardened
+          yarn install
       - name: Install Playwright Browsers
         run: yarn playwright install --with-deps
       - name: Run Playwright tests
