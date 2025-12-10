@@ -146,7 +146,10 @@ export default function Chatbot() {
   }
 
   function isBulletBlock(block: string) {
-    const lines = block.split("\n").map((l) => l.trim()).filter(Boolean);
+    const lines = block
+      .split("\n")
+      .map((l) => l.trim())
+      .filter(Boolean);
     if (lines.length === 0) return false;
     return lines.every((l) => l.startsWith("- ") || l.startsWith("* "));
   }
@@ -222,7 +225,10 @@ export default function Chatbot() {
       }
 
       parts.push(
-        <code key={`c-${code}`} className="px-1.5 py-0.5 rounded-md bg-black/70 text-white font-mono text-xs">
+        <code
+          key={`c-${code}`}
+          className="px-1.5 py-0.5 rounded-md bg-black/70 text-white font-mono text-xs"
+        >
           {fragment.slice(code + 1, end)}
         </code>
       );
@@ -295,7 +301,12 @@ export default function Chatbot() {
 
     setError(null);
 
-    const userMsg: Message = { id: `${Date.now()}-u`, sender: "user", text: trimmed, time: Date.now() };
+    const userMsg: Message = {
+      id: `${Date.now()}-u`,
+      sender: "user",
+      text: trimmed,
+      time: Date.now(),
+    };
     setMessages((m) => [...m, userMsg]);
     setText("");
     setLoading(true);
@@ -311,7 +322,8 @@ export default function Chatbot() {
       const botMsg: Message = {
         id: `${Date.now()}-b`,
         sender: "bot",
-        text: typeof data?.reply === "string" ? data.reply : "Sorry — I couldn’t generate a response.",
+        text:
+          typeof data?.reply === "string" ? data.reply : "Sorry — I couldn’t generate a response.",
         time: Date.now(),
       };
       setMessages((m) => [...m, botMsg]);
@@ -319,7 +331,12 @@ export default function Chatbot() {
       setError(err?.message || "Network error — please try again.");
       setMessages((m) => [
         ...m,
-        { id: `${Date.now()}-b`, sender: "bot", text: "I’m having trouble reaching the server right now. Please try again in a moment.", time: Date.now() },
+        {
+          id: `${Date.now()}-b`,
+          sender: "bot",
+          text: "I’m having trouble reaching the server right now. Please try again in a moment.",
+          time: Date.now(),
+        },
       ]);
     } finally {
       setLoading(false);
@@ -327,9 +344,11 @@ export default function Chatbot() {
   }
 
   // ---------- UI building blocks ----------
-  const glass = "bg-white/60 dark:bg-slate-950/60 backdrop-blur-md border border-white/40 dark:border-white/10";
+  const glass =
+    "bg-white/60 dark:bg-slate-950/60 backdrop-blur-md border border-white/40 dark:border-white/10";
   const botBubble = `rounded-2xl px-4 py-2 text-sm leading-relaxed shadow-sm ${glass} text-gray-900 dark:text-gray-100`;
-  const userBubble = "rounded-2xl px-4 py-2 text-sm leading-relaxed shadow-sm bg-indigo-600 text-white";
+  const userBubble =
+    "rounded-2xl px-4 py-2 text-sm leading-relaxed shadow-sm bg-indigo-600 text-white";
 
   // A small “welcome” prompt (first time users)
   const showStarter = messages.length === 0;
@@ -340,18 +359,16 @@ export default function Chatbot() {
       <div
         aria-hidden={!open}
         onClick={() => setOpen(false)}
-        className={`fixed inset-0 z-40 transition-opacity duration-200 md:hidden ${open ? "opacity-100 bg-black/30 backdrop-blur-sm" : "opacity-0 pointer-events-none"
-          }`}
+        className={`fixed inset-0 z-40 transition-opacity duration-200 md:hidden ${
+          open ? "opacity-100 bg-black/30 backdrop-blur-sm" : "opacity-0 pointer-events-none"
+        }`}
       />
 
       {/* floating entry + panel */}
       <div className="fixed bottom-6 right-6 z-50 md:bottom-8 md:right-8">
         <div className="flex flex-col items-end">
           {/* launcher */}
-          {!open && (
-
-            <ChatLauncher onOpen={() => setOpen(true)} />
-          )}
+          {!open && <ChatLauncher onOpen={() => setOpen(true)} />}
 
           {open && (
             <div
@@ -362,15 +379,17 @@ export default function Chatbot() {
               }
             >
               <div
-                className={`${glass} ${isMobileNow ? "rounded-none h-full" : "rounded-3xl"
-                  } flex flex-col overflow-hidden`}
+                className={`${glass} ${
+                  isMobileNow ? "rounded-none h-full" : "rounded-3xl"
+                } flex flex-col overflow-hidden`}
                 style={{
                   height: isMobileNow ? "100%" : "34rem", // desktop fixed height
                 }}
               >
-
                 {/* header */}
-                <div className={`${glass} border-b border-white/30 dark:border-white/10 px-4 py-3 flex items-center gap-3`}>
+                <div
+                  className={`${glass} border-b border-white/30 dark:border-white/10 px-4 py-3 flex items-center gap-3`}
+                >
                   <button
                     onClick={() => setOpen(false)}
                     className="p-2 rounded-full hover:bg-white/20 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-indigo-400"
@@ -389,8 +408,12 @@ export default function Chatbot() {
                   />
 
                   <div className="min-w-0 flex-1">
-                    <div className="text-sm font-semibold text-gray-900 dark:text-gray-100">Virtual Parag</div>
-                    <div className="text-xs text-gray-600 dark:text-gray-300">Tech lead • .Net • React • AWS • Azure</div>
+                    <div className="text-sm font-semibold text-gray-900 dark:text-gray-100">
+                      Virtual Parag
+                    </div>
+                    <div className="text-xs text-gray-600 dark:text-gray-300">
+                      Tech lead • .Net • React • AWS • Azure
+                    </div>
                   </div>
                 </div>
 
@@ -402,7 +425,9 @@ export default function Chatbot() {
                 >
                   {showStarter && (
                     <div className="text-center text-sm text-gray-600 dark:text-gray-300">
-                      Try: <span className="font-medium">**explain** Lambda + API Gateway</span> — or paste a snippet with <span className="font-medium">`code`</span> and I’ll walk through it.
+                      Try: <span className="font-medium">**explain** Lambda + API Gateway</span> —
+                      or paste a snippet with <span className="font-medium">`code`</span> and I’ll
+                      walk through it.
                     </div>
                   )}
 
@@ -410,7 +435,11 @@ export default function Chatbot() {
                     const isLast = idx === messages.length - 1;
                     const isBot = m.sender === "bot";
                     return (
-                      <div key={m.id} ref={isLast ? lastMessageRef : null} className={`flex ${isBot ? "justify-start" : "justify-end"}`}>
+                      <div
+                        key={m.id}
+                        ref={isLast ? lastMessageRef : null}
+                        className={`flex ${isBot ? "justify-start" : "justify-end"}`}
+                      >
                         {isBot && (
                           <Image
                             src="/profile.jpg"
@@ -421,7 +450,11 @@ export default function Chatbot() {
                           />
                         )}
 
-                        <div className={isBot ? botBubble : userBubble} role="article" aria-label={`${m.sender} message`}>
+                        <div
+                          className={isBot ? botBubble : userBubble}
+                          role="article"
+                          aria-label={`${m.sender} message`}
+                        >
                           {renderMarkdown(m.text)}
                         </div>
                       </div>
@@ -430,14 +463,24 @@ export default function Chatbot() {
 
                   {loading && (
                     <div className="flex items-center gap-2">
-                      <Image src="/profile.jpg" width={120} height={120} alt="Virtual Parag" className="w-8 h-8 rounded-full object-cover" />
+                      <Image
+                        src="/profile.jpg"
+                        width={120}
+                        height={120}
+                        alt="Virtual Parag"
+                        className="w-8 h-8 rounded-full object-cover"
+                      />
                       <div className={`${botBubble} flex items-center gap-2`}>
                         <span className="text-xs text-gray-600 dark:text-gray-300">
                           {Math.random() < 0.5 ? "Thinking" : "Typing"}
                         </span>
                         <span className="inline-flex gap-1 items-end" aria-hidden="true">
                           {[0, 1, 2].map((i) => (
-                            <span key={i} className="w-1.5 h-1.5 rounded-full bg-gray-500 dark:bg-gray-300 animate-bounce" style={{ animationDelay: `${i * 0.14}s` }} />
+                            <span
+                              key={i}
+                              className="w-1.5 h-1.5 rounded-full bg-gray-500 dark:bg-gray-300 animate-bounce"
+                              style={{ animationDelay: `${i * 0.14}s` }}
+                            />
                           ))}
                         </span>
                       </div>
