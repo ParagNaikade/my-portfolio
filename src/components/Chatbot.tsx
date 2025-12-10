@@ -425,9 +425,7 @@ export default function Chatbot() {
                 >
                   {showStarter && (
                     <div className="text-center text-sm text-gray-600 dark:text-gray-300">
-                      Try: <span className="font-medium">**explain** Lambda + API Gateway</span> —
-                      or paste a snippet with <span className="font-medium">`code`</span> and I’ll
-                      walk through it.
+                      Ask about me, my skills or leadership experience
                     </div>
                   )}
 
@@ -504,7 +502,7 @@ export default function Chatbot() {
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     className="flex-1 rounded-2xl border border-white/30 dark:border-white/10 bg-white/70 dark:bg-slate-900/60 text-gray-900 dark:text-gray-50 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                    placeholder="Ask about me, my skills or leadership experience..."
+                    placeholder="Type your question here"
                     onKeyDown={(e) => {
                       if (e.key === "Enter" && !e.shiftKey) sendMessage(e as any);
                     }}
