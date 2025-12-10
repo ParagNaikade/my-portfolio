@@ -18,6 +18,7 @@ export default function Chatbot() {
 
   const scrollAreaRef = useRef<HTMLDivElement | null>(null);
   const lastMessageRef = useRef<HTMLDivElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   // ---------- responsive (mobile detection) ----------
   const isMobile = useMemo(() => {
@@ -34,6 +35,35 @@ export default function Chatbot() {
     mq.addEventListener?.("change", onChange);
     return () => mq.removeEventListener?.("change", onChange);
   }, []);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const handlePopState = (e: PopStateEvent) => {
+      // Close chat instead of going back
+      setOpen(false);
+      // Prevent actual back navigation
+      window.history.pushState(null, document.title, window.location.href);
+    };
+
+    // Push a dummy history entry so back button triggers popstate
+    window.history.pushState(null, document.title, window.location.href);
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+      // Clean up dummy history
+      if (window.history.state === null) window.history.back();
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (open) {
+      setTimeout(() => {
+        inputRef.current?.focus();
+      }, 100); // small delay to ensure panel is rendered
+    }
+  }, [open]);
 
   // ---------- lock page scroll on mobile when open ----------
   useEffect(() => {
@@ -499,6 +529,7 @@ export default function Chatbot() {
                 >
                   <input
                     aria-label="Type a message"
+                    ref={inputRef}
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     className="flex-1 rounded-2xl border border-white/30 dark:border-white/10 bg-white/70 dark:bg-slate-900/60 text-gray-900 dark:text-gray-50 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
