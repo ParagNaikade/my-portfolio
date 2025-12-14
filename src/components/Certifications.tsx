@@ -23,7 +23,7 @@ export default function Certifications() {
             min-w-[260px] max-w-xs flex-shrink-0
             bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900
             border border-gray-200 dark:border-gray-700 shadow-md dark:shadow-lg rounded-2xl p-6 flex flex-col items-center text-center
-            hover:shadow-lg dark:hover:shadow-xl transition-colors transition-shadow
+            hover:shadow-2xl transition-transform duration-300 hover:scale-105
             sm:min-w-0 sm:max-w-none
           "
           initial={{ opacity: 0, y: 20 }}
