@@ -29,7 +29,7 @@ export default function Home() {
           Hi, I&apos;m Parag Naikade 👋
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-300">
-          Tech Lead • Team Builder & Mentor • Full Stack Developer (.NET, React, Azure)
+          Tech Lead • Team Builder & Mentor • Full Stack Developer (.NET, React, AWS, Azure, AI)
         </p>
       </motion.header>
 
@@ -43,14 +43,24 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
           Featured Projects
         </h2>
+        <p className="mb-4 text-gray-500 dark:text-gray-400 text-sm">
+          Here are a few selected projects.{" "}
+          <Link href="/projects" className="underline text-blue-600 dark:text-blue-400">
+            Browse all projects
+          </Link>{" "}
+          for more.
+        </p>
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {projects.slice(0, 3).map((project, index) => (
             <ProjectCard key={project.slug} project={project} index={index} />
           ))}
         </div>
-        <div className="mt-6">
-          <Link href="/projects" className="text-blue-600 dark:text-blue-400 underline">
-            View all projects →
+        <div className="mt-6 flex justify-center">
+          <Link
+            href="/projects"
+            className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
+          >
+            View All Projects
           </Link>
         </div>
       </motion.section>

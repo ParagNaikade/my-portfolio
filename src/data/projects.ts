@@ -12,7 +12,6 @@ export interface IProject {
     dark: string;
   };
   architecture: Record<string, string>;
-  installation: string[];
   screenshots: string[];
   devops: {
     ciCd: string;
@@ -23,6 +22,69 @@ export interface IProject {
 }
 
 export const projects: IProject[] = [
+  {
+    slug: "ai-chatbot",
+    title: "AI Chatbot with Amazon Bedrock & Next.js",
+    shortDescription:
+      "A secure, mobile-friendly AI chatbot using Amazon Bedrock, Next.js, and Tailwind CSS. Features persistent chat, AWS OIDC CI/CD, and robust cloud protections.",
+    fullDescription: `
+    This project is a modern AI chatbot built with Next.js and Tailwind CSS, designed for seamless use across all devices. It leverages Amazon Bedrock's Nova micro model for AI responses, with a backend powered by AWS Lambda and API Gateway (SAM project). The UI is fully responsive and keeps chat history in local storage, so conversations persist even after a page refresh.
+    Security is a top priority: the chatbot is protected with rate limiting, DoS protection, Cloudflare security, and AWS CloudWatch alarms. CI/CD is handled via GitHub Actions using AWS OIDC for secure deployments, with IAM roles configured for GitHub authentication.
+  `,
+    features: [
+      "Chatbot UI built with Tailwind CSS and Next.js",
+      "Mobile-friendly, responsive layout for all devices",
+      "Persistent chat history using local storage",
+      "AI powered by Amazon Bedrock Nova micro model",
+      "Backend with AWS Lambda and API Gateway (SAM project)",
+      "Rate limiting and DoS protection on API endpoints",
+      "Cloudflare security and protection",
+      "AWS CloudWatch alarms for monitoring",
+      "CI/CD pipeline with GitHub Actions and AWS OIDC integration",
+      "IAM roles for secure GitHub-to-AWS authentication",
+    ],
+    tech: [
+      { name: "Next.js", icon: "🌐" },
+      { name: "Tailwind CSS", icon: "🎨" },
+      { name: "React", icon: "⚛️" },
+      { name: "Amazon Bedrock", icon: "🪨" },
+      { name: "AWS Lambda", icon: "λ" },
+      { name: "API Gateway", icon: "🛣️" },
+      { name: "SAM", icon: "📦" },
+      { name: "Cloudflare", icon: "☁️" },
+      { name: "CloudWatch", icon: "📈" },
+      { name: "GitHub Actions", icon: "🚀" },
+      { name: "OIDC", icon: "🔐" },
+      { name: "Local Storage", icon: "💾" },
+    ],
+    github: "https://github.com/ParagNaikade/my-portfolio-chatbot",
+    demo: "https://paragnaikade.com/",
+    gradient: {
+      light: "from-green-50 via-blue-50 to-indigo-100",
+      dark: "dark:from-slate-800 dark:via-neutral-800 dark:to-indigo-900",
+    },
+    architecture: {
+      Frontend:
+        "Next.js app with Tailwind CSS for UI, chat state managed in local storage for persistence.",
+      Backend: "AWS Lambda functions exposed via API Gateway, deployed using AWS SAM.",
+      AI: "Amazon Bedrock Nova micro model for generating responses.",
+      Security: "Rate limiting, DoS protection, Cloudflare, and AWS CloudWatch alarms.",
+      CI_CD: "GitHub Actions pipeline with AWS OIDC provider and IAM role for secure deployments.",
+    },
+    screenshots: ["/chatbot_1.png", "/chatbot_2.png"],
+    devops: {
+      ciCd: "GitHub Actions with AWS OIDC for secure, automated deployments.",
+      hosting:
+        "Frontend hosted on Vercel as a part of portfolio website, backend on AWS Lambda/API Gateway.",
+      analytics: "AWS CloudWatch for monitoring and alarms.",
+    },
+    notes: [
+      "Chat history is stored in local storage for persistence across sessions.",
+      "API endpoints are protected with rate limiting and DoS protection.",
+      "Cloudflare and AWS CloudWatch provide additional layers of security and monitoring.",
+      "CI/CD uses AWS OIDC and IAM roles for secure GitHub-to-AWS authentication.",
+    ],
+  },
   {
     slug: "order-tracking-app",
     title: "Order Management System with Clean Architecture",
@@ -74,12 +136,6 @@ export const projects: IProject[] = [
       "Migration Runner": "Console app for initial database seeding",
       "Docker Compose": "Orchestrates MongoDB, SQL Server, RabbitMQ services",
     },
-    installation: [
-      "Clone the repository",
-      "Run docker-compose up to start MongoDB, SQL Server, and RabbitMQ",
-      "Build and run the API, Consumer, and Migration Runner projects via Docker",
-      "Use API endpoints to create and retrieve orders",
-    ],
     screenshots: ["/demo_3.svg"],
     devops: {
       ciCd: "GitHub Actions pipeline builds Docker images and runs tests",
@@ -133,13 +189,6 @@ export const projects: IProject[] = [
       "Lobby.razor": "Lobby page for joining rooms and selecting avatars",
       "GameRoom.razor": "Main game room UI for playing rounds",
     },
-    installation: [
-      "Install .NET 8 SDK",
-      "Restore NuGet packages",
-      "Build the project",
-      "Run the server",
-      "Open https://localhost:5001 in your browser",
-    ],
     screenshots: ["/rps_1.png", "/rps_2.png", "/rps_3.png", "/rps_4.png"], // Add screenshot paths if available, e.g. ["/blazor_game_lobby_1.png"]
     devops: {
       ciCd: "Auto deplpoyment via Render.com with GitHub integration",
@@ -167,7 +216,7 @@ export const projects: IProject[] = [
       "Contact form with Formspree integration and Google reCAPTCHA for spam protection",
       "Google Analytics integration for traffic insights",
       "CI/CD pipeline using GitHub Actions for build & deploy automation",
-      "Hosted on a custom Cloudflare domain with HTTPS and production performance",
+      "Hosted on Vercel with a custom Cloudflare domain, HTTPS, and production performance",
       "Developer experience enhancements: ESLint, Prettier, and project-wide linting setup",
     ],
     github: "https://github.com/ParagNaikade/my-portfolio",
@@ -192,11 +241,6 @@ export const projects: IProject[] = [
       "Theming & UI":
         "Dark and light mode support implemented with next-themes for seamless theme switching, and icons are provided by lucide-react for a consistent UI experience.",
     },
-    installation: [
-      "Clone the repo: git clone https://github.com/ParagNaikade/my-portfolio",
-      "Install dependencies: yarn install",
-      "Start the dev server: yarn dev",
-    ],
     screenshots: ["/demo_1.png", "/demo_2.png"],
     devops: {
       ciCd: "Automated CI/CD using GitHub Actions to build and deploy on every commit.",
