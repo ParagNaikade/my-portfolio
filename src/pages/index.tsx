@@ -13,10 +13,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Parag Naikade | Lead Full Stack Developer</title>
+        <title>Parag Naikade | Senior Full-Stack Engineer (.NET, React, AWS, Azure)</title>
+
         <meta
           name="description"
-          content="Portfolio of Parag Naikade - .NET, React, DevOps Engineer"
+          content="Senior Full-Stack Engineer specialising in .NET, React, AWS and Azure. Experience leading teams and delivering scalable cloud solutions."
         />
       </Head>
 
@@ -40,7 +41,8 @@ export default function Home() {
             Hi, I&apos;m Parag Naikade <span className="animate-wave inline-block">👋</span>
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            Tech Lead • Team Builder & Mentor • Full Stack Developer (.NET, React, AWS, Azure, AI)
+            Staff-level Full-Stack Engineer helping teams build scalable, cloud-native systems
+            (.NET, React, AWS, Azure)
           </p>
         </div>
       </motion.header>
@@ -70,8 +72,54 @@ export default function Home() {
 
       <SectionDivider />
 
+      <SectionTitle>How I Work</SectionTitle>
+
+      <p className="mb-4 text-gray-500 dark:text-gray-400 text-sm">
+        This site includes a custom-built AI assistant to help visitors explore my experience
+      </p>
+
+      <div className="grid gap-4 md:grid-cols-2">
+        {[
+          {
+            title: "Problem First",
+            text: "I focus on understanding the real business problem before jumping into solutions or technology choices.",
+          },
+          {
+            title: "Pragmatic Architecture",
+            text: "I design systems that are simple, scalable, and easy to evolve — avoiding unnecessary complexity.",
+          },
+          {
+            title: "Clear Trade-offs",
+            text: "I make architectural and technical trade-offs explicit so teams can move fast with confidence.",
+          },
+          {
+            title: "Collaborative Leadership",
+            text: "I work closely with engineers, product, and stakeholders to align delivery with outcomes.",
+          },
+          {
+            title: "Mentorship & Growth",
+            text: "I mentor engineers through code reviews, design discussions, and hands-on guidance.",
+          },
+        ].map((item) => (
+          <div
+            key={item.title}
+            className="p-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-sm"
+          >
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">{item.title}</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">{item.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <SectionDivider />
+
       {/* Certifications */}
       <SectionTitle>Microsoft Certifications</SectionTitle>
+
+      <p className="mb-4 text-gray-500 dark:text-gray-400 text-sm">
+        Industry-recognised certifications validating cloud and architecture expertise.
+      </p>
+
       <Certifications />
 
       <SectionDivider />
@@ -94,9 +142,10 @@ export default function Home() {
 
       {/* Resume */}
       <SectionTitle>Resume</SectionTitle>
-      <p className="mb-2 text-gray-600 dark:text-gray-300">
-        You can view/download my resume below:
+      <p className="mb-4 text-gray-500 dark:text-gray-400 text-sm">
+        Prefer a concise summary? Please view or download my resume.
       </p>
+
       <ResumeButtons />
 
       <SectionDivider />
