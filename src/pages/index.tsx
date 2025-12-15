@@ -56,7 +56,7 @@ export default function Home() {
       </p>
       <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {projects.slice(0, 3).map((project, index) => (
-          <ProjectCard key={project.slug} project={project} index={index} showActions />
+          <ProjectCard key={project.slug} project={project} index={index} />
         ))}
       </div>
       <div className="mt-6 flex justify-center">
