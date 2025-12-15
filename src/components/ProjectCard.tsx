@@ -17,7 +17,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     >
       <Link
         href={`/projects/${project.slug}`}
-        className={`group flex flex-col h-full overflow-hidden border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-lg hover:border-blue-500 transition duration-300 bg-gradient-to-br ${project.gradient.light} ${project.gradient.dark}`}
+        className={`group flex flex-col h-full overflow-hidden border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-2xl hover:border-blue-500 transition-transform duration-300 bg-gradient-to-br ${project.gradient.light} ${project.gradient.dark} hover:scale-105`}
       >
         <div className="flex flex-col flex-1 p-6">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 mb-2">

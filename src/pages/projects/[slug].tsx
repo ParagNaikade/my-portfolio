@@ -97,20 +97,6 @@ export default function ProjectPage({ project }: Props) {
         </section>
       )}
 
-      {/* Installation */}
-      {project.installation && (
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">Installation</h2>
-          <ol className="list-decimal list-inside text-gray-700 dark:text-gray-300 space-y-1">
-            {project.installation.map((step, i) => (
-              <li key={i} className="whitespace-pre-wrap">
-                {step}
-              </li>
-            ))}
-          </ol>
-        </section>
-      )}
-
       {/* Screenshots */}
       {project.screenshots && project.screenshots.length > 0 && (
         <section>
