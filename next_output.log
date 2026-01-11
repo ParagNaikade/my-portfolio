@@ -1,0 +1,21 @@
+yarn run v1.22.22
+$ next dev --turbopack
+   ▲ Next.js 15.4.8 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.2:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 1492ms
+ ○ Compiling / ...
+ ✓ Compiled / in 8.2s
+ GET / 200 in 9349ms
+ ○ Compiling /about ...
+ ✓ Compiled /about in 864ms
+ GET /about 200 in 1130ms
+ ○ Compiling /projects ...
+ ✓ Compiled /projects in 663ms
+ GET /projects 200 in 811ms
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 740ms
+ GET /contact 200 in 889ms

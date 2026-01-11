@@ -1,3 +1,5 @@
+"use client";
+
 import { ICaseStudy } from "@/data/caseStudies";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";

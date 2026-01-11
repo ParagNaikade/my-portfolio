@@ -1,14 +1,31 @@
-import { GetStaticPaths, GetStaticProps } from "next";
-import { useRouter } from "next/router";
-import { caseStudies, ICaseStudy } from "@/data/caseStudies";
+import { caseStudies } from "@/data/caseStudies";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-interface Props {
-  caseStudy: ICaseStudy;
+interface CaseStudyPageProps {
+  params: Promise<{ slug: string }>;
 }
 
-export default function CaseStudyPage({ caseStudy }: Props) {
-  const router = useRouter();
-  if (router.isFallback) return <div>Loading...</div>;
+export async function generateStaticParams() {
+  return caseStudies.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const caseStudy = caseStudies.find((p) => p.slug === slug);
+  return {
+    title: caseStudy ? `${caseStudy.title} | Leadership` : "Case Study Not Found",
+    description: caseStudy?.summary,
+  };
+}
+
+export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
+  const { slug } = await params;
+  const caseStudy = caseStudies.find((p) => p.slug === slug);
+
+  if (!caseStudy) {
+    notFound();
+  }
 
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300 py-12 px-4">
@@ -44,14 +61,3 @@ export default function CaseStudyPage({ caseStudy }: Props) {
     </main>
   );
 }
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = caseStudies.map((p) => ({ params: { slug: p.slug } }));
-  return { paths, fallback: false };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const caseStudy = caseStudies.find((p) => p.slug === params?.slug);
-  if (!caseStudy) return { notFound: true };
-  return { props: { caseStudy } };
-};

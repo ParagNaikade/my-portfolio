@@ -1,9 +1,11 @@
+"use client";
+
 import { CaseStudy } from "@/components/CaseStudy";
 import { caseStudies } from "@/data/caseStudies";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function CaseStudyPage() {
+export default function LeadershipPage() {
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
