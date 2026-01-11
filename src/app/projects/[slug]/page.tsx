@@ -1,16 +1,33 @@
-import { GetStaticPaths, GetStaticProps } from "next";
-import { projects, IProject } from "../../data/projects";
-import { useRouter } from "next/router";
+import { projects } from "@/data/projects";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-interface Props {
-  project: IProject;
+interface ProjectPageProps {
+  params: Promise<{ slug: string }>;
 }
 
-export default function ProjectPage({ project }: Props) {
-  const router = useRouter();
-  if (router.isFallback) return <div>Loading...</div>;
+export async function generateStaticParams() {
+  return projects.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+  return {
+    title: project ? `${project.title} | Projects` : "Project Not Found",
+    description: project?.shortDescription,
+  };
+}
+
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+
+  if (!project) {
+    notFound();
+  }
 
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-10 bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
@@ -155,14 +172,3 @@ export default function ProjectPage({ project }: Props) {
     </div>
   );
 }
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = projects.map((p) => ({ params: { slug: p.slug } }));
-  return { paths, fallback: false };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const project = projects.find((p) => p.slug === params?.slug);
-  if (!project) return { notFound: true };
-  return { props: { project } };
-};

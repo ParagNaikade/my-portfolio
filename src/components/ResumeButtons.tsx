@@ -1,3 +1,5 @@
+"use client";
+
 import { logEvent } from "@/lib/gtag";
 import { motion } from "framer-motion";
 import { Eye, Download } from "lucide-react";

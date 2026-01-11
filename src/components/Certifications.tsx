@@ -1,3 +1,5 @@
+"use client";
+
 import { certifications } from "@/data/certifications";
 import { motion } from "framer-motion";
 import Image from "next/image";

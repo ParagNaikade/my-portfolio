@@ -1,4 +1,5 @@
-import Head from "next/head";
+"use client";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,18 +10,9 @@ import { testimonials } from "@/data/testimonials";
 import Certifications from "@/components/Certifications";
 import ResumeButtons from "@/components/ResumeButtons";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
-      <Head>
-        <title>Parag Naikade | Senior Full-Stack Engineer (.NET, React, AWS, Azure)</title>
-
-        <meta
-          name="description"
-          content="Senior Full-Stack Engineer specialising in .NET, React, AWS and Azure. Experience leading teams and delivering scalable cloud solutions."
-        />
-      </Head>
-
       {/* Hero Section with Avatar */}
       <motion.header
         className="my-12 flex flex-col md:flex-row items-center gap-8"
@@ -187,29 +179,3 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 function SectionDivider() {
   return <div className="my-12 border-t border-gray-200 dark:border-gray-700 w-full" />;
 }
-
-// Optional: Add this to your global CSS for waving hand animation and gradient underline
-/*
-@keyframes wave {
-  0% { transform: rotate(0deg); }
-  10% { transform: rotate(14deg); }
-  20% { transform: rotate(-8deg); }
-  30% { transform: rotate(14deg); }
-  40% { transform: rotate(-4deg); }
-  50% { transform: rotate(10deg); }
-  60% { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
-}
-.animate-wave {
-  animation: wave 2s infinite;
-  transform-origin: 70% 70%;
-}
-@keyframes gradient-x {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-.animate-gradient-x {
-  background-size: 200% 200%;
-  animation: gradient-x 3s ease infinite;
-}
-*/
