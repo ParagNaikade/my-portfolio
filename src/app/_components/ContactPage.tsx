@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Recaptcha = dynamic(() => import("@/components/Recaptcha"), { ssr: false });
 
-export default function ContactForm() {
+export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [token, setToken] = useState<string | null>(null);
   const [status, setStatus] = useState<"idle" | "success" | "error" | "submitting">("idle");
