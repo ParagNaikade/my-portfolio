@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export async function POST(req: Request) {
   try {
@@ -6,15 +7,22 @@ export async function POST(req: Request) {
 
     console.log("Received message:", message);
 
-    const response = await fetch(process.env.AWS_API_URL!, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message }),
-    });
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      console.error("GEMINI_API_KEY is not defined in environment variables");
+      return NextResponse.json(
+        { error: "API key configuration missing" },
+        { status: 500 }
+      );
+    }
 
-    const data = await response.json();
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-    return NextResponse.json(data);
+    const result = await model.generateContent(message);
+    const reply = result.response.text();
+
+    return NextResponse.json({ reply });
   } catch (error) {
     console.error("Error in chat API:", error);
     return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
