@@ -6,15 +6,11 @@ export async function POST(req: Request) {
 
     console.log("Received message:", message);
 
-    const response = await fetch(process.env.AWS_API_URL!, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message }),
+    // Return a static response since the AWS backend is currently unavailable
+    return NextResponse.json({
+      reply:
+        "I'm currently offline as my backend is being updated. Please reach out via the contact form instead!",
     });
-
-    const data = await response.json();
-
-    return NextResponse.json(data);
   } catch (error) {
     console.error("Error in chat API:", error);
     return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
