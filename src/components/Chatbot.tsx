@@ -242,15 +242,15 @@ export default function Chatbot() {
     while (i < fragment.length) {
       const code = fragment.indexOf("`", i);
       if (code === -1) {
-        parts.push(renderBoldItalic(fragment.slice(i)));
+        parts.push(<React.Fragment key={`text-${i}`}>{renderBoldItalic(fragment.slice(i))}</React.Fragment>);
         break;
       }
 
-      if (code > i) parts.push(renderBoldItalic(fragment.slice(i, code)));
+      if (code > i) parts.push(<React.Fragment key={`text-${i}-${code}`}>{renderBoldItalic(fragment.slice(i, code))}</React.Fragment>);
 
       const end = fragment.indexOf("`", code + 1);
       if (end === -1) {
-        parts.push(renderBoldItalic(fragment.slice(code)));
+        parts.push(<React.Fragment key={`text-${code}`}>{renderBoldItalic(fragment.slice(code))}</React.Fragment>);
         break;
       }
 
@@ -285,16 +285,16 @@ export default function Chatbot() {
       })();
 
       if (!next) {
-        out.push(fragment.slice(i));
+        out.push(<React.Fragment key={`frag-${i}`}>{fragment.slice(i)}</React.Fragment>);
         break;
       }
 
-      if (next.idx > i) out.push(fragment.slice(i, next.idx));
+      if (next.idx > i) out.push(<React.Fragment key={`frag-${i}-${next.idx}`}>{fragment.slice(i, next.idx)}</React.Fragment>);
 
       if (next.kind === "b") {
         const end = fragment.indexOf("**", next.idx + 2);
         if (end === -1) {
-          out.push(fragment.slice(next.idx));
+          out.push(<React.Fragment key={`frag-${next.idx}`}>{fragment.slice(next.idx)}</React.Fragment>);
           break;
         }
         out.push(
@@ -306,7 +306,7 @@ export default function Chatbot() {
       } else {
         const end = fragment.indexOf("*", next.idx + 1);
         if (end === -1) {
-          out.push(fragment.slice(next.idx));
+          out.push(<React.Fragment key={`frag-${next.idx}`}>{fragment.slice(next.idx)}</React.Fragment>);
           break;
         }
         out.push(
